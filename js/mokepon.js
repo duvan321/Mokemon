@@ -23,8 +23,7 @@ function seleccionarMascotaJugador() {
   } else if (inputCapipepo.checked) {
     spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_ratigueya_attack-b0c80a77-499a-49b6-a722-eab23f055cec.jpg" alt="">`;
   } else if (inputRatigueya.checked) {
-    spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt=""></label>
-    <input type="radio" name="mascota" id="ratigueya" />`;
+    spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt="">`;
   } else {
     alert("Selecciona una mascota");
   }
@@ -40,8 +39,7 @@ function seleccionarMascotaEnemigo() {
   } else if (mascotaAleatoria == 2) {
     spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_ratigueya_attack-b0c80a77-499a-49b6-a722-eab23f055cec.jpg" alt="">`;
   } else {
-    spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt=""></label>
-    <input type="radio" name="mascota" id="ratigueya" />`;
+    spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt="">`;
   }
 }
 function ataqueFuego() {
