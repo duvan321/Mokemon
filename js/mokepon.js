@@ -1,6 +1,14 @@
 let ataqueJugador;
 let ataqueEnemigo;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 function iniciarJuego() {
+  //desaparece el boton reiniciar
+  let sectionReiniciarJuego = document.getElementById("reiniciar");
+  sectionReiniciarJuego.style.display = "none";
+  //desaparce el selecionar ataque
+  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+  sectionSeleccionarAtaque.style.display = "none";
   let botonMascotaJugador = document.getElementById("boton-mascota");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
@@ -10,20 +18,30 @@ function iniciarJuego() {
   botonAgua.addEventListener("click", ataqueAgua);
   let botonTierra = document.getElementById("boton-tierra");
   botonTierra.addEventListener("click", ataqueTierra);
+  let bontonReiniciar = document.getElementById("boton-reiniciar");
+  bontonReiniciar.addEventListener("click", reiniciarJuego);
 }
 
 function seleccionarMascotaJugador() {
+  //desaparece el boton selecionar mascota
+  let sectionSeleccionarMascota = document.getElementById(
+    "seleccionar-mascota"
+  );
+  sectionSeleccionarMascota.style.display = "none";
+  //aparece el selecionar ataque
+  let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque");
+  sectionSeleccionarAtaque.style.display = "flex";
   let inputHipodoge = document.getElementById("hipodoge");
   let inputCapipepo = document.getElementById("capipepo");
   let inputRatigueya = document.getElementById("ratigueya");
   let spanMascotaJugador = document.getElementById("mascota-jugador");
 
   if (inputHipodoge.checked) {
-    spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_hipodoge_attack-4e83b55e-c381-4098-9a9d-40d86921d2a7.jpg" alt="" alt=""/>`;
+    spanMascotaJugador.innerHTML = "Hipodoge";
   } else if (inputCapipepo.checked) {
-    spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_ratigueya_attack-b0c80a77-499a-49b6-a722-eab23f055cec.jpg" alt="">`;
+    spanMascotaJugador.innerHTML = "Capipepo";
   } else if (inputRatigueya.checked) {
-    spanMascotaJugador.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt="">`;
+    spanMascotaJugador.innerHTML ="Ratigueya";
   } else {
     alert("Selecciona una mascota");
   }
@@ -35,11 +53,11 @@ function seleccionarMascotaEnemigo() {
   let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
 
   if (mascotaAleatoria == 1) {
-    spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_hipodoge_attack-4e83b55e-c381-4098-9a9d-40d86921d2a7.jpg" alt="" alt=""/>`;
+    spanMascotaEnemigo.innerHTML = "Hipodoge";
   } else if (mascotaAleatoria == 2) {
-    spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_ratigueya_attack-b0c80a77-499a-49b6-a722-eab23f055cec.jpg" alt="">`;
+    spanMascotaEnemigo.innerHTML = "Capipepo";
   } else {
-    spanMascotaEnemigo.innerHTML = `<img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt="">`;
+    spanMascotaEnemigo.innerHTML ="Ratigueya";
   }
 }
 function ataqueFuego() {
@@ -68,17 +86,36 @@ function ataqueAleatorioEnemigo() {
 
   combate();
 }
+
 function combate() {
+  let spanVidasJugador = document.getElementById("vidas-jugador");
+  let spanVidasEnemigo = document.getElementById("vidas-enemigo");
   if (ataqueEnemigo == ataqueJugador) {
     crearMensaje("empate🤨");
   } else if (ataqueJugador == "🔥" && ataqueEnemigo == "🌱") {
     crearMensaje("GANASTE🎉");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else if (ataqueJugador == "💧" && ataqueEnemigo == "🔥") {
     crearMensaje("GANASTE🎉");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else if (ataqueJugador == "🌱" && ataqueEnemigo == "💧") {
     crearMensaje("GANASTE🎉");
+    vidasEnemigo--;
+    spanVidasEnemigo.innerHTML = vidasEnemigo;
   } else {
     crearMensaje("PERDISTE😣");
+    vidasJugador--;
+    spanVidasJugador.innerHTML = vidasJugador;
+  }
+  revisarVidas();
+  function revisarVidas() {
+    if (vidasEnemigo == 0) {
+      crearMensajeFinal("FELICTACIONES GANSTE");
+    } else if (vidasJugador == 0) {
+      crearMensajeFinal("LO SENTIMOS PERDISTE");
+    }
   }
 }
 
@@ -93,6 +130,28 @@ function crearMensaje(resultado) {
     "- " +
     resultado;
   sectionMensajes.appendChild(parrafo);
+}
+function crearMensajeFinal(resultadoFinal) {
+  let sectionMensajes = document.getElementById("mensajes");
+  let parrafo = document.createElement("p");
+  parrafo.innerHTML = resultadoFinal;
+
+  sectionMensajes.appendChild(parrafo);
+  let botonMascotaJugador = document.getElementById("boton-mascota");
+  botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
+  //disable para desabilitar los botones
+  let botonFuego = document.getElementById("boton-fuego");
+  botonFuego.disabled = true;
+  let botonAgua = document.getElementById("boton-agua");
+  botonAgua.disabled = true;
+  let botonTierra = document.getElementById("boton-tierra");
+  botonTierra.disabled = true;
+  //aparesca el botoon reiniciar
+  let sectionReiniciarJuego = document.getElementById("reiniciar");
+  sectionReiniciarJuego.style.display = "block";
+}
+function reiniciarJuego() {
+  location.reload();
 }
 
 function aleatorio(min, max) {

@@ -1,10 +1,95 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
- text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap");
+body {
+  height: 100vh;
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/055/030/081/large/ceriien-arts-sleeper-suicunelayoutpng-wmrk.jpg?1665958968);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Fredoka One", cursive;
 }
-img{
-    width: 3rem;
+
+img {
+  width: 80px;
 }
+.titulo {
+  color: yellow;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+.titulo-2 {
+  color: yellow;
+  font-size: 20px;
+}
+
+#seleccionar-mascota {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tarjetas {
+  display: flex;
+  gap: 10px;
+}
+.tarjeta-de-moketon {
+  margin-top: 10px;
+  width: 180px;
+  height: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.tarjeta-de-moketon img {
+  height: 150px;
+  width: 100px;
+}
+input {
+  display: none;
+}
+.boton-seleccionar {
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 30px;
+  border: 1px solid white;
+  border-radius: 20px;
+  text-align: center;
+  color: yellow;
+}
+p {
+  color: yellow;
+}
+
+#seleccionar-ataque {
+  flex-direction: column;
+  align-items: center;
+}
+#seleccionar-ataque h1 {
+  color: rgb(8, 24, 94);
+}
+#seleccionar-ataque .titulo-2 {
+  color: rgb(8, 24, 94);
+}
+#seleccionar-ataque p {
+  color: rgb(8, 24, 94);
+}
+
+.boton-de-ataue {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border-color: transparent;
+  width: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  color: rgb(2, 22, 65);
+  font-size: 15px;
+}
+

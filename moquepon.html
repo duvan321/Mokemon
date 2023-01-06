@@ -4,46 +4,62 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="mokemon.css">
+    <link rel="stylesheet" href="mokemon.css" />
     <script src="./js/mokepon.js"></script>
     <title>MOKEMON!</title>
   </head>
   <body>
-    <h1>MOKEPON! 🔥💧🌱</h1>
-
     <section id="seleccionar-mascota">
-        <h2>Elige tu mascota:</h2>
-
-        <label for="hipodoge"><img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_hipodoge_attack-4e83b55e-c381-4098-9a9d-40d86921d2a7.jpg" alt="" alt=""/>HIPODOGE</label>
+      <h1 class="titulo">Mokepon</h1>
+      <h2 class="titulo-2">Elige tu mascota:</h2>
+      <div class="tarjetas">
+        <label class="tarjeta-de-moketon" for="hipodoge"
+          ><p>Hipodoge</p>
+          <img src="/images/hipodoge.png" alt=""
+        /></label>
         <input type="radio" name="mascota" id="hipodoge" />
-        
-        <label for="capipepo"><img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_ratigueya_attack-b0c80a77-499a-49b6-a722-eab23f055cec.jpg" alt="">CAPIPEPO</label>
-        <input type="radio" name="mascota" id="capipepo" />
-        
-        <label for="ratigueya"><img src="https://static.platzi.com/media/user_upload/mokepons_mokepon_capipepo_attack-1dc6228d-c376-44d0-bc7d-66fa8cd91197.jpg" alt="">RATIGUEYA</label>
-        <input type="radio" name="mascota" id="ratigueya" />
 
-        <button id="boton-mascota">Seleccionar</button>
+        <label class="tarjeta-de-moketon" for="capipepo"
+          ><p>Capipepo</p>
+          <img src="/images/capipepo.png" alt=""
+        /></label>
+        <input type="radio" name="mascota" id="capipepo" />
+
+        <label class="tarjeta-de-moketon" for="ratigueya"
+          ><p>Ratigueya</p>
+          <img src="/images/ratigueya.png" alt=""
+        /></label>
+        <input type="radio" name="mascota" id="ratigueya" />
+      </div>
+      <button class="boton-seleccionar" id="boton-mascota">Seleccionar</button>
     </section>
 
     <section id="seleccionar-ataque">
-        <h2>Elige tu ataque:</h2>
+      <h1 class="titulo">Mokemon</h1>
+      <h2 class="titulo-2">Elige tu ataque:</h2>
+      <div>
+        <button id="boton-fuego" class=" boton-de-ataue">Fuego 🔥</button>
+        <button id="boton-agua"class=" boton-de-ataue">Agua 💧</button>
+        <button id="boton-tierra"class=" boton-de-ataue">Tierra 🌱</button>
+      </div>
 
-        <p>Tu mascota <span id="mascota-jugador"></span> tiene <span>3</span> vidas</p>
-        <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span>3</span> vidas</p>
+      <div>
+        <section id="mensajes"></section>
 
+        <section id="reiniciar">
+          <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+      </div>
+      <div>
         <p>
-            <button id="boton-fuego">Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tierra">Tierra 🌱</button>
+          Tu mascota <span id="mascota-jugador"></span> tiene
+          <span id="vidas-jugador">3</span> vidas
         </p>
-    </section>
-
-    <section id="mensajes">
-    </section>
-
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar</button>
+        <p>
+          La mascota <span id="mascota-enemigo"></span> del enemigo tiene
+          <span id="vidas-enemigo">3</span> vidas
+        </p>
+      </div>
     </section>
   </body>
 </html>
