@@ -1,24 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap");
-body {
-  height: 100vh;
-  background-image: url(https://cdnb.artstation.com/p/assets/images/images/055/030/081/large/ceriien-arts-sleeper-suicunelayoutpng-wmrk.jpg?1665958968);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Fredoka One", cursive;
-}
 
-img {
-  width: 80px;
-}
-.titulo {
-  color: yellow;
-  margin-top: 80px;
-  margin-bottom: 50px;
-  font-size: 24px;
-}
-.titulo-2 {
-  color: yellow;
-  font-size: 20px;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(3, 7, 70);
 }
 
 #seleccionar-mascota {
@@ -27,69 +11,140 @@ img {
   justify-content: center;
   align-items: center;
 }
-.tarjetas {
-  display: flex;
-  gap: 10px;
+
+.titulo {
+  color: rgb(214, 17, 17);
+  font-size: 32px;
+  font-family: "Fredoka One", cursive;
 }
-.tarjeta-de-moketon {
-  margin-top: 10px;
+
+.subtitulo {
+  color: rgb(175, 7, 7);
+  font-size: 20px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+
+  gap: 5px;
+}
+
+.tarjeta-de-mokepon {
   width: 180px;
-  height: 200px;
+  height: 100px;
+  background: #c05111;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
   display: flex;
-  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  color: white;
 }
-.tarjeta-de-moketon img {
-  height: 150px;
-  width: 100px;
+
+.tarjeta-de-mokepon img {
+  width: 80px;
 }
+
+#boton-mascota {
+  width: 180px;
+  height: 40px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 30px;
+}
+
 input {
   display: none;
 }
-.boton-seleccionar {
-  font-family: "Poppins", sans-serif;
-  width: 100px;
-  height: 40px;
-  background-color: transparent;
-  padding: 10px;
-  box-sizing: border-box;
-  margin-top: 30px;
-  border: 1px solid white;
-  border-radius: 20px;
-  text-align: center;
-  color: yellow;
-}
-p {
-  color: yellow;
+
+input:checked + label {
+  background-color: #5d8bf4;
 }
 
 #seleccionar-ataque {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-#seleccionar-ataque h1 {
-  color: rgb(8, 24, 94);
-}
-#seleccionar-ataque .titulo-2 {
-  color: rgb(8, 24, 94);
-}
-#seleccionar-ataque p {
-  color: rgb(8, 24, 94);
-}
 
-.boton-de-ataue {
-  font-family: "Poppins", sans-serif;
-  background-color: transparent;
-  border-color: transparent;
-  width: 100px;
+.boton-de-ataque {
+  background-color: #11468f;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
-  color: rgb(2, 22, 65);
-  font-size: 15px;
+  border-color: transparent;
+  width: 80px;
+  color: white;
+  font-family: "Poppins", sans-serif;
 }
 
+#mensajes {
+  width: 280px;
+  background: #c20b0b;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#boton-reiniciar {
+  border: none;
+  color: #11468f;
+  font-family: "Poppins", sans-serif;
+}
+
+.ataques {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  color: white;
+}
+
+#vidas-jugador,
+#vidas-enemigo {
+  font-size: 32px;
+  margin-bottom: 0;
+}
+
+.ataques-jugador,
+.ataques-enemigo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#ver-mapa{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+#mapa{
+  border: 2px solid white;
+}
+@media (max-width: 500px) {
+  .tarjetas {
+    display: grid;
+    grid-template-columns: 150px 150px;
+  }
+  .tarjetas-ataques {
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    gap: 5px;
+  }
+  #mensajes {
+    width: 240px;
+  }
+  .tarjeta-de-mokepon img {
+    width: 50px;
+  }
+  .tarjeta-de-mokepon {
+    width: 150px;
+    height: 80px;
+  }
+}

@@ -5,61 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="mokemon.css" />
-    <script src="./js/mokepon.js"></script>
+
     <title>MOKEMON!</title>
   </head>
   <body>
     <section id="seleccionar-mascota">
-      <h1 class="titulo">Mokepon</h1>
-      <h2 class="titulo-2">Elige tu mascota:</h2>
-      <div class="tarjetas">
-        <label class="tarjeta-de-moketon" for="hipodoge"
-          ><p>Hipodoge</p>
-          <img src="/images/hipodoge.png" alt=""
-        /></label>
-        <input type="radio" name="mascota" id="hipodoge" />
+      <h1 class="titulo">Mokepono</h1>
 
-        <label class="tarjeta-de-moketon" for="capipepo"
-          ><p>Capipepo</p>
-          <img src="/images/capipepo.png" alt=""
-        /></label>
-        <input type="radio" name="mascota" id="capipepo" />
+      <h2 class="subtitulo">Elige tu mascota:</h2>
 
-        <label class="tarjeta-de-moketon" for="ratigueya"
-          ><p>Ratigueya</p>
-          <img src="/images/ratigueya.png" alt=""
-        /></label>
-        <input type="radio" name="mascota" id="ratigueya" />
-      </div>
-      <button class="boton-seleccionar" id="boton-mascota">Seleccionar</button>
+      <div id="contenedorTarjetas" class="tarjetas"></div>
+
+      <button id="boton-mascota">Seleccionar</button>
     </section>
-
+    <section id="ver-mapa">
+      <h1 class="titulo">Recorre el mapa co tu mokepon</h1>
+      <canvas id="mapa"></canvas>
+      <button onmouseup="detenerMovimiento()" onmousedown="moverArriba()">
+        Arriba
+      </button>
+      <button onmouseup="detenerMovimiento()" onmousedown="moverIzquierda()">
+        Izquierda
+      </button>
+      <button onmouseup="detenerMovimiento()" onmousedown="moverAbajo()">
+        Abajo
+      </button>
+      <button onmouseup="detenerMovimiento()" onmousedown="moverDerecha()">
+        Derecha
+      </button>
+    </section>
     <section id="seleccionar-ataque">
-      <h1 class="titulo">Mokemon</h1>
-      <h2 class="titulo-2">Elige tu ataque:</h2>
-      <div>
-        <button id="boton-fuego" class=" boton-de-ataue">Fuego 🔥</button>
-        <button id="boton-agua"class=" boton-de-ataue">Agua 💧</button>
-        <button id="boton-tierra"class=" boton-de-ataue">Tierra 🌱</button>
-      </div>
+      <h1 class="titulo">Mokepon</h1>
 
-      <div>
-        <section id="mensajes"></section>
+      <h2 class="subtitulo">Elige tu ataque:</h2>
+
+      <div id="contenedorAtaques" class="tarjetas-ataques"></div>
+
+      <div id="mensajes">
+        <p id="resultado">Mucha suerte</p>
 
         <section id="reiniciar">
           <button id="boton-reiniciar">Reiniciar</button>
         </section>
       </div>
-      <div>
-        <p>
-          Tu mascota <span id="mascota-jugador"></span> tiene
-          <span id="vidas-jugador">3</span> vidas
-        </p>
-        <p>
-          La mascota <span id="mascota-enemigo"></span> del enemigo tiene
-          <span id="vidas-enemigo">3</span> vidas
-        </p>
+
+      <div class="ataques">
+        <div class="ataques-jugador">
+          <p id="vidas-jugador">0🏆</p>
+          <p id="mascota-jugador"></p>
+          <div id="ataques-del-jugador"></div>
+        </div>
+        <div class="ataques-enemigo">
+          <p id="vidas-enemigo">0🏆</p>
+          <p id="mascota-enemigo"></p>
+          <div id="ataques-del-enemigo"></div>
+        </div>
       </div>
     </section>
+    <script src="./js/mokepon.js"></script>
   </body>
 </html>
