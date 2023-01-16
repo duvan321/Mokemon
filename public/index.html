@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/mokemon.css" />
+
+    <title>MOKEMON!</title>
+  </head>
+  <body>
+    <section id="seleccionar-mascota">
+      <h1 class="titulo">Mokepon online</h1>
+
+      <h2 class="subtitulo">Elige tu mascota:</h2>
+
+      <div id="contenedorTarjetas" class="tarjetas"></div>
+
+      <button id="boton-mascota" class="tooltips">
+        Seleccionar<span class="tooltips-box"
+          >Recuerde selecionar tu mascota</span
+        >
+      </button>
+    </section>
+    <section id="ver-mapa">
+      <h2 class="subtitulo">Recorre el mapa co tu mokepon</h2>
+      <canvas id="mapa"></canvas>
+      <button
+        ontouchend="detenerMovimiento()"
+        onmouseup="detenerMovimiento()"
+        onmousedown="moverArriba()"
+        ontouchstart="moverArriba()"
+      >
+        Arriba
+      </button>
+      <div>
+        <button
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
+          onmousedown="moverIzquierda()"
+          ontouchstart="moverIzquierda()"
+        >
+          Izquierda
+        </button>
+        <button
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
+          onmousedown="moverAbajo()"
+          ontouchstart="moverAbajo()"
+        >
+          Abajo
+        </button>
+        <button
+          onmouseup="detenerMovimiento()"
+          ontouchend="detenerMovimiento()"
+          onmousedown="moverDerecha()"
+          ontouchstart="moverDerecha()"
+        >
+          Derecha
+        </button>
+      </div>
+    </section>
+    <section id="seleccionar-ataque">
+      <h1 class="titulo">Mokepon</h1>
+
+      <h2 class="subtitulo">Elige tu ataque:</h2>
+
+      <div id="contenedorAtaques" class="tarjetas-ataques"></div>
+
+      <div id="mensajes">
+        <p id="resultado">Mucha suerte</p>
+
+        <section id="reiniciar">
+          <button id="boton-reiniciar">Reiniciar</button>
+        </section>
+      </div>
+      <div class="victorias">
+        victorias<span class="victorias-box"
+          ><h4>puedes ganar con:</h4>
+          <h5>jugador VS enemigo</h5>
+          fuego VS tierra,<br />
+          agua VS fuego, <br />viento VS trueno, <br />tierra VS agua,
+          <br />viento VS fuego, <br />fuego VS trueno, <br />viento VS agua,
+          <br />agua VS trueno, <br />viento VS tierra, <br />trueno VS
+          tierra.</span
+        >
+      </div>
+      <div class="ataques">
+        <div class="ataques-jugador">
+          <p id="vidas-jugador">0</p>
+          <p id="mascota-jugador"></p>
+          <div id="ataques-del-jugador"></div>
+        </div>
+
+        <div class="ataques-enemigo">
+          <p id="vidas-enemigo">0</p>
+          <p id="mascota-enemigo"></p>
+          <div id="ataques-del-enemigo"></div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/mokepon.js"></script>
+  </body>
+</html>
